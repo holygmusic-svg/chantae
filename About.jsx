@@ -10,10 +10,10 @@ export const About = () => (
     data-testid="about-section"
     className="relative py-20 md:py-32 bg-[#F9F6F0] w-full overflow-hidden"
   >
-    {/* Clean 12-column grid splitting the layout in half at large screen sizes */}
-    <div className="max-w-[1440px] mx-auto px-6 md:px-12 grid grid-cols-12 gap-8 lg:gap-12 items-center w-full">
+    {/* Grid forces a strict 50/50 split canvas configuration across desktop profiles */}
+    <div className="max-w-[1440px] mx-auto px-6 md:px-12 grid grid-cols-12 gap-8 lg:gap-16 items-center w-full">
       
-      {/* --- LEFT COLUMN: TYPOGRAPHY (Takes up exactly half the screen width on desktop) --- */}
+      {/* --- LEFT SIDE: TEXT BLOCK --- */}
       <div className="col-span-12 lg:col-span-6 flex flex-col justify-center text-left relative z-10 w-full">
         <Reveal>
           <span className="label-ed text-[#A9967A] flex items-center gap-3">
@@ -29,30 +29,32 @@ export const About = () => (
           </h2>
         </div>
 
-        {/* Text paragraph wrappers safely locked inside the 50% left boundary */}
-        <div className="mt-8 w-full max-w-xl">
-          <Reveal delay={0.2}>
-            <div className="space-y-5">
-              {CONTENT.about.paragraphs.map((p, i) => (
-                <p
-                  key={i}
-                  className="text-sm sm:text-base md:text-lg font-light leading-relaxed text-[#5C5F5A]"
-  style={{ maxWidth: "85%", pr: "2rem", display: "block" }}
->
-                  {p}
-                </p>
-              ))}
-            </div>
-          </Reveal>
+        {/* Removed <Reveal> wrapper from the paragraph blocks to prevent line-stretching script conflicts */}
+        <div className="mt-8 w-full flex flex-col space-y-5">
+          {CONTENT.about.paragraphs.map((p, i) => (
+            <p
+              key={i}
+              className="text-sm sm:text-base md:text-lg font-light leading-relaxed text-[#5C5F5A]"
+              style={{
+                maxWidth: "85%",
+                display: "inline-block",
+                wordBreak: "break-word",
+                overflowWrap: "break-word",
+                whiteSpace: "normal"
+              }}
+            >
+              {p}
+            </p>
+          ))}
         </div>
       </div>
 
-      {/* --- RIGHT COLUMN: IMAGE (Takes up exactly half the screen width on desktop) --- */}
+      {/* --- RIGHT SIDE: PHOTO BLOCK --- */}
       <div className="col-span-12 lg:col-span-6 flex justify-center lg:justify-end relative mt-8 lg:mt-0 w-full">
         <Reveal delay={0.25} y={30}>
           <div className="relative w-full max-w-md lg:max-w-full">
             
-            {/* Removed lg:translate-y-16 and lg:-translate-x-10 to stop the image from jumping into the text */}
+            {/* Fluid container canvas scales cleanly across desktop and minimized windows */}
             <div className="w-full h-auto overflow-hidden border border-[#A9967A]/30 rounded-sm bg-black/5 flex items-center justify-center">
               <img
                 src={ABOUT_IMG}
@@ -62,7 +64,6 @@ export const About = () => (
               />
             </div>
             
-            {/* Metadata layout tag attached neatly onto the bottom boundary edge */}
             <div className="absolute -bottom-4 right-4 bg-[#F9F6F0] border border-[#A9967A]/30 px-5 py-2.5 shadow-sm z-20">
               <span className="label-ed text-xs tracking-wider text-[#5C5F5A]">
                 {CONTENT.about.stat}

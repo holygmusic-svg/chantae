@@ -1,5 +1,4 @@
 import React from 'react';
-// 1. Tell Vite exactly where your public asset sits so it assigns it a production URL
 import heroImage from '../../public/chantaeclose14x11.jpg'; 
 
 const Hero = () => {

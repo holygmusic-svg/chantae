@@ -1,4 +1,6 @@
 import React from 'react';
+// 1. Tell Vite exactly where your public asset sits so it assigns it a production URL
+import heroImage from '../../public/chantaeclose14x11.jpg'; 
 
 const Hero = () => {
   return (
@@ -27,9 +29,9 @@ const Hero = () => {
       {/* RIGHT COLUMN: HERO PORTRAIT FRAME */}
       <div className="w-full md:w-[45%] mt-8 md:mt-0 flex justify-center items-center relative box-border">
         <div className="w-full max-w-[500px] aspect-[11/14] relative overflow-hidden bg-gray-50 shadow-sm border border-gray-100 rounded-sm">
-          {/* Looks directly at the root main folder for the image */}
+          {/* 2. Bind the static asset variable here */}
           <img 
-            src="/chantaeclose14x11.jpg" 
+            src={heroImage} 
             alt="Chantae Sierra - Beauty & Fashion Model Editorial" 
             className="w-full h-full object-cover object-center block"
           />

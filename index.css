@@ -114,3 +114,44 @@
         border-bottom-color: inherit;
     }
 }
+
+/* ─────────────────────────────────────────────────────────────
+   COMPACT POSITIONING SYSTEM OVERRIDES
+   ───────────────────────────────────────────────────────────── */
+
+/* Forces the ultra-wide layout grids (1600px/1440px) to snap down to an elegant 1200px max width */
+div[class*="max-w-[1600px]"],
+div[class*="max-w-[1440px]"],
+.max-w-\[1600px\],
+main, section {
+    max-width: 1200px !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    box-sizing: border-box !important;
+}
+
+/* Tightens padding margins across desktop resolutions */
+@media (min-width: 1024px) {
+    div[class*="px-6"], 
+    div[class*="px-12"],
+    div[class*="md:px-12"] {
+        padding-left: 2.5rem !important;
+        padding-right: 2.5rem !important;
+    }
+    
+    /* Adds a safety cushion so paragraph headers never crash into layout imagery */
+    div[class*="lg:col-span-7"] {
+        padding-right: 3rem !important;
+    }
+}
+
+/* Scales down massive headline sizes so text elements naturally break early */
+h1, .text-\[13vw\], [class*="lg:text-[8.5rem]"] {
+    font-size: clamp(2.5rem, 6vw, 6.2rem) !important;
+    line-height: 1.05 !important;
+}
+
+h2, [class*="lg:text-7xl"] {
+    font-size: clamp(2rem, 4.5vw, 4.2rem) !important;
+    line-height: 1.1 !important;
+}

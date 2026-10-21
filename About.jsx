@@ -8,34 +8,35 @@ export const About = () => (
   <section
     id="story"
     data-testid="about-section"
-    className="relative py-16 md:py-28 bg-[#F9F6F0] w-full overflow-hidden"
+    className="relative py-20 md:py-32 bg-[#F9F6F0] w-full overflow-hidden"
   >
-    <div className="max-w-[1440px] mx-auto px-6 md:px-12 flex flex-col lg:flex-row items-center justify-between gap-8 lg:gap-16 w-full">
+    {/* Clean 12-column grid splitting the layout in half at large screen sizes */}
+    <div className="max-w-[1440px] mx-auto px-6 md:px-12 grid grid-cols-12 gap-8 lg:gap-12 items-center w-full">
       
-      {/* --- LEFT TEXT PANEL --- */}
-      <div className="w-full lg:w-[55%] flex flex-col justify-center text-left relative z-10">
+      {/* --- LEFT COLUMN: TYPOGRAPHY (Takes up exactly half the screen width on desktop) --- */}
+      <div className="col-span-12 lg:col-span-6 flex flex-col justify-center text-left relative z-10 w-full">
         <Reveal>
           <span className="label-ed text-[#A9967A] flex items-center gap-3">
             <FloraMark className="w-4 h-4" /> The Story
           </span>
         </Reveal>
         
-        <div className="w-full max-w-xl mt-6">
-          <h2 className="font-serif-ed font-light text-4xl sm:text-5xl md:text-6xl lg:text-[4.2rem] xl:text-[4.8rem] leading-[1.05] tracking-tight text-[#1C1E1B] uppercase whitespace-normal break-words block">
+        <div className="w-full mt-6">
+          <h2 className="font-serif-ed font-light text-4xl sm:text-5xl md:text-6xl lg:text-[3.8rem] xl:text-[4.5rem] leading-[1.1] tracking-tight text-[#1C1E1B] uppercase whitespace-normal break-words block">
             A muse grown <em className="italic text-[#A9967A]">wild</em>,
             <br />
             framed in <em className="italic">stillness</em>.
           </h2>
         </div>
 
-        {/* FIX: Added absolute percentage capping and right-side padding boundary constraints */}
-        <div className="mt-8 w-full max-w-lg lg:w-[90%] xl:w-[85%] pr-4 sm:pr-6 lg:pr-8 block z-20">
+        {/* Text paragraph wrappers safely locked inside the 50% left boundary */}
+        <div className="mt-8 w-full max-w-xl">
           <Reveal delay={0.2}>
-            <div>
+            <div className="space-y-5">
               {CONTENT.about.paragraphs.map((p, i) => (
                 <p
                   key={i}
-                  className={`text-sm sm:text-base md:text-lg font-light leading-relaxed text-[#5C5F5A] break-words whitespace-normal ${i > 0 ? "mt-5" : ""}`}
+                  className="text-sm sm:text-base md:text-lg font-light leading-relaxed text-[#5C5F5A] break-words whitespace-normal"
                 >
                   {p}
                 </p>
@@ -45,20 +46,22 @@ export const About = () => (
         </div>
       </div>
 
-      {/* --- RIGHT PHOTO PANEL --- */}
-      <div className="w-full lg:w-[45%] flex justify-center lg:justify-end relative mt-6 lg:mt-0">
+      {/* --- RIGHT COLUMN: IMAGE (Takes up exactly half the screen width on desktop) --- */}
+      <div className="col-span-12 lg:col-span-6 flex justify-center lg:justify-end relative mt-8 lg:mt-0 w-full">
         <Reveal delay={0.25} y={30}>
-          <div className="relative w-full max-w-md">
+          <div className="relative w-full max-w-md lg:max-w-full">
             
+            {/* Removed lg:translate-y-16 and lg:-translate-x-10 to stop the image from jumping into the text */}
             <div className="w-full h-auto overflow-hidden border border-[#A9967A]/30 rounded-sm bg-black/5 flex items-center justify-center">
               <img
                 src={ABOUT_IMG}
                 alt={`${CONTENT.name} — portrait structure`}
                 data-testid="about-portrait-image"
-                className="w-full h-auto max-h-[50vh] lg:max-h-[65vh] object-contain object-center hover:scale-[1.02] transition-transform duration-700 ease-out"
+                className="w-full h-auto max-h-[55vh] lg:max-h-[65vh] object-contain object-center hover:scale-[1.02] transition-transform duration-700 ease-out"
               />
             </div>
             
+            {/* Metadata layout tag attached neatly onto the bottom boundary edge */}
             <div className="absolute -bottom-4 right-4 bg-[#F9F6F0] border border-[#A9967A]/30 px-5 py-2.5 shadow-sm z-20">
               <span className="label-ed text-xs tracking-wider text-[#5C5F5A]">
                 {CONTENT.about.stat}

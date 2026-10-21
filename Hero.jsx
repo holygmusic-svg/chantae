@@ -11,7 +11,7 @@ const Hero = () => {
           ✧ ETHEREAL FLORA — EST. MMXIX
         </span>
         
-        {/* Main Name Heading - Using Fluid Typography to prevent clipping */}
+        {/* Main Name Heading - Dynamic Fluid Typography */}
         <h1 className="font-serif leading-[0.9] text-gray-900 uppercase tracking-tight mb-6 select-none overflow-wrap-break-word max-w-full"
             style={{ fontSize: 'clamp(3rem, 10vw, 7.5rem)' }}>
           Chantae<br />
@@ -27,6 +27,7 @@ const Hero = () => {
       {/* RIGHT COLUMN: HERO PORTRAIT FRAME */}
       <div className="w-full md:w-[45%] mt-8 md:mt-0 flex justify-center items-center relative box-border">
         <div className="w-full max-w-[500px] aspect-[11/14] relative overflow-hidden bg-gray-50 shadow-sm border border-gray-100 rounded-sm">
+          {/* Pointing directly to the root asset path */}
           <img 
             src="/chantaeclose14x11.jpg" 
             alt="Chantae Sierra - Beauty & Fashion Model Editorial" 

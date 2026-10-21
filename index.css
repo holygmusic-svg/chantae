@@ -1,0 +1,116 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Manrope:wght@200;300;400;500;600&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+    :root {
+        --background: 40 33% 96%;
+        --foreground: 90 5% 11%;
+        --card: 40 33% 96%;
+        --card-foreground: 90 5% 11%;
+        --popover: 40 33% 96%;
+        --popover-foreground: 90 5% 11%;
+        --primary: 90 5% 11%;
+        --primary-foreground: 40 33% 96%;
+        --secondary: 36 14% 90%;
+        --secondary-foreground: 90 5% 11%;
+        --muted: 36 14% 90%;
+        --muted-foreground: 100 3% 36%;
+        --accent: 36 21% 57%;
+        --accent-foreground: 40 33% 96%;
+        --destructive: 0 84.2% 60.2%;
+        --destructive-foreground: 0 0% 98%;
+        --border: 36 21% 57%;
+        --input: 36 21% 57%;
+        --ring: 90 5% 11%;
+        --radius: 0.25rem;
+
+        --sand: #F9F6F0;
+        --ink: #1C1E1B;
+        --olive: #5C5F5A;
+        --bronze: #A9967A;
+        --stone: #EBE6DF;
+    }
+}
+
+@layer base {
+    * {
+        @apply border-border;
+    }
+    html.lenis, html.lenis body {
+        height: auto;
+    }
+    .lenis.lenis-smooth {
+        scroll-behavior: auto !important;
+    }
+    body {
+        @apply text-foreground;
+        background-color: var(--sand);
+        font-family: 'Manrope', sans-serif;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+        overflow-x: hidden;
+    }
+    ::selection {
+        background: var(--bronze);
+        color: var(--sand);
+    }
+}
+
+.font-serif-ed {
+    font-family: 'Cormorant Garamond', serif;
+}
+.font-sans-ed {
+    font-family: 'Manrope', sans-serif;
+}
+
+.noise-overlay {
+    position: fixed;
+    inset: 0;
+    z-index: 100;
+    pointer-events: none;
+    opacity: 0.035;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+.text-stroke-olive {
+    -webkit-text-stroke: 1px var(--olive);
+    color: transparent;
+}
+
+.label-ed {
+    @apply text-xs md:text-sm uppercase tracking-[0.25em] font-sans-ed font-light;
+}
+
+@layer base {
+    [data-debug-wrapper="true"] {
+        display: contents !important;
+    }
+    [data-debug-wrapper="true"] > * {
+        margin-left: inherit;
+        margin-right: inherit;
+        margin-top: inherit;
+        margin-bottom: inherit;
+        padding-left: inherit;
+        padding-right: inherit;
+        padding-top: inherit;
+        padding-bottom: inherit;
+        column-gap: inherit;
+        row-gap: inherit;
+        gap: inherit;
+        border-left-width: inherit;
+        border-right-width: inherit;
+        border-top-width: inherit;
+        border-bottom-width: inherit;
+        border-left-style: inherit;
+        border-right-style: inherit;
+        border-top-style: inherit;
+        border-bottom-style: inherit;
+        border-left-color: inherit;
+        border-right-color: inherit;
+        border-top-color: inherit;
+        border-bottom-color: inherit;
+    }
+}

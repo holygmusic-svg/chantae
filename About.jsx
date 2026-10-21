@@ -36,8 +36,9 @@ export const About = () => (
               {CONTENT.about.paragraphs.map((p, i) => (
                 <p
                   key={i}
-                  className="text-sm sm:text-base md:text-lg font-light leading-relaxed text-[#5C5F5A] break-words whitespace-normal"
-                >
+                  className="text-sm sm:text-base md:text-lg font-light leading-relaxed text-[#5C5F5A]"
+  style={{ maxWidth: "85%", pr: "2rem", display: "block" }}
+>
                   {p}
                 </p>
               ))}

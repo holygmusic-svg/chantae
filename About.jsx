@@ -1,75 +1,74 @@
 import { Reveal } from "./Reveal";
 import { FloraMark } from "./Logo";
+import { CONTENT } from "@/content";
 
-const ABOUT_IMG = "https://squarespace-cdn.com";
+const ABOUT_IMG =
+  "https://unsplash.com";
 
 export const About = () => (
   <section
     id="story"
     data-testid="about-section"
-    className="relative py-20 md:py-32 bg-[#F9F6F0] w-full overflow-hidden"
+    className="relative py-32 md:py-48 bg-[#F9F6F0]"
   >
-    {/* A clean 12-column grid splitting your page layout 50/50 on desktop displays */}
-    <div className="max-w-[1440px] mx-auto px-6 md:px-12 grid grid-cols-12 gap-8 lg:gap-12 items-center w-full">
-      
-      {/* --- LEFT SIDE: TYPOGRAPHY (Takes exactly 6 out of 12 columns on desktop) --- */}
-      <div className="col-span-12 lg:col-span-6 flex flex-col justify-center text-left relative z-10 w-full">
+    <div className="max-w-[1600px] mx-auto px-6 md:px-12 grid grid-cols-12 gap-6">
+      <div className="col-span-12 lg:col-span-7 relative z-10">
         <Reveal>
           <span className="label-ed text-[#A9967A] flex items-center gap-3">
             <FloraMark className="w-4 h-4" /> The Story
           </span>
         </Reveal>
-        
-        <div className="w-full mt-6">
-          <h2 className="font-serif-ed font-light text-4xl sm:text-5xl md:text-6xl lg:text-[3.8rem] xl:text-[4.5rem] leading-[1.1] tracking-tight text-[#1C1E1B] uppercase whitespace-normal break-words block">
+        <Reveal delay={0.1}>
+          <h2 className="font-serif-ed font-light text-4xl md:text-6xl lg:text-7xl leading-[1.05] tracking-tight mt-8">
             A muse grown <em className="italic text-[#A9967A]">wild</em>,
             <br />
             framed in <em className="italic">stillness</em>.
           </h2>
-        </div>
-
-        {/* FIX: The loop has been removed. Paragraphs are typed directly into independent, constrained boxes to force text wrapping. */}
-        <div className="mt-8 w-full max-w-xl space-y-5">
-          <p className="text-sm sm:text-base md:text-lg font-light leading-relaxed text-[#5C5F5A] block pr-4 lg:pr-8">
-            Chantae Sierra is a beauty and fashion model whose work lives at the 
-            edge of romance and restraint. 
-          </p>
-          <p className="text-sm sm:text-base md:text-lg font-light leading-relaxed text-[#5C5F5A] block pr-4 lg:pr-8">
-            From quiet studio editorials to sculptural runway moments, her presence 
-            is deliberate — never decoration, always narrative.
-          </p>
-          <p className="text-sm sm:text-base md:text-lg font-light leading-relaxed text-[#5C5F5A] block pr-4 lg:pr-8">
-            Represented across Paris, Milan and New York, she collaborates with photographers, 
-            stylists and maisons who believe an image should outlive its season.
-          </p>
+        </Reveal>
+        
+        {/* PUSH-LEFT CHANGE: Shifted left by 5rem, shrunk to 80% max-width, and stripped out lg:ml-24 */}
+        <div 
+          className="mt-12"
+          style={{ 
+            position: "relative",
+            left: "-5rem",
+            maxWidth: "80%",
+            paddingRight: "4rem"
+          }}
+        >
+          <Reveal delay={0.2}>
+            <div>
+              {CONTENT.about.paragraphs.map((p, i) => (
+                <p
+                  key={i}
+                  className={`text-sm sm:text-base md:text-lg font-light leading-relaxed text-[#5C5F5A] ${i > 0 ? "mt-6" : ""}`}
+                >
+                  {p}
+                </p>
+              ))}
+            </div>
+          </Reveal>
         </div>
       </div>
 
-      {/* --- RIGHT SIDE: PHOTO (Takes exactly 6 out of 12 columns on desktop) --- */}
-      <div className="col-span-12 lg:col-span-6 flex justify-center lg:justify-end relative mt-8 lg:mt-0 w-full">
-        <Reveal delay={0.25} y={30}>
-          <div className="relative w-full max-w-md lg:max-w-full">
-            
-            {/* Strict width parameters block your picture from crossing into the text column boundaries */}
-            <div className="w-full h-auto overflow-hidden border border-[#A9967A]/30 rounded-sm bg-black/5 flex items-center justify-center">
+      <div className="col-span-12 lg:col-span-5 mt-16 lg:mt-0">
+        <Reveal delay={0.25} y={50}>
+          <div className="relative">
+            {/* Removed the negative left translation class to stop the picture from invading the left lane */}
+            <div className="aspect-[4/5] overflow-hidden border border-[#A9967A]/40 lg:translate-y-16">
               <img
                 src={ABOUT_IMG}
-                alt="Chantae Sierra — portrait structure"
+                alt={`${CONTENT.name} — portrait in a structured coat`}
                 data-testid="about-portrait-image"
-                className="w-full h-auto max-h-[55vh] lg:max-h-[65vh] object-contain object-center hover:scale-[1.02] transition-transform duration-700 ease-out"
+                className="w-full h-full object-cover hover:scale-105 transition-transform duration-700 ease-out"
               />
             </div>
-            
-            <div className="absolute -bottom-4 right-4 bg-[#F9F6F0] border border-[#A9967A]/30 px-5 py-2.5 shadow-sm z-20">
-              <span className="label-ed text-xs tracking-wider text-[#5C5F5A]">
-                SEVEN SEAS — FOUR CONTINENTS
-              </span>
+            <div className="absolute -bottom-6 -right-2 lg:right-6 bg-[#F9F6F0] border border-[#A9967A]/40 px-6 py-4">
+              <span className="label-ed text-[#5C5F5A]">{CONTENT.about.stat}</span>
             </div>
-
           </div>
         </Reveal>
       </div>
-
     </div>
   </section>
 );

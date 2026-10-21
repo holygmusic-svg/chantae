@@ -27,7 +27,7 @@ const Hero = () => {
       {/* RIGHT COLUMN: HERO PORTRAIT FRAME */}
       <div className="w-full md:w-[45%] mt-8 md:mt-0 flex justify-center items-center relative box-border">
         <div className="w-full max-w-[500px] aspect-[11/14] relative overflow-hidden bg-gray-50 shadow-sm border border-gray-100 rounded-sm">
-          {/* Pointing directly to the root asset path */}
+          {/* Looks directly at the root main folder for the image */}
           <img 
             src="/chantaeclose14x11.jpg" 
             alt="Chantae Sierra - Beauty & Fashion Model Editorial" 

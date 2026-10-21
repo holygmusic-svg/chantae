@@ -30,7 +30,7 @@ const Hero = () => {
         <div className="w-full max-w-[500px] aspect-[11/14] relative overflow-hidden bg-gray-50 shadow-sm border border-gray-100 rounded-sm">
           {/* 2. Bind the static asset variable here */}
           <img 
-            src={heroImage} 
+            src={heroImage} '../../public/chantaeclose14x11.jpg'
             alt="Chantae Sierra - Beauty & Fashion Model Editorial" 
             className="w-full h-full object-cover object-center block"
           />

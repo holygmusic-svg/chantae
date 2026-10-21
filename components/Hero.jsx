@@ -34,15 +34,11 @@ const Hero = () => {
         {/* Responsive container box holding the background layout */}
         <div className="w-full max-w-[450px] aspect-[11/14] relative overflow-hidden bg-zinc-200/50 shadow-sm rounded-sm">
           
-          {/* BULLETPROOF VITE PUBLIC IMAGE INJECTION */}
+          {/* SAFE ABSOLUTE ROOT PATH FOR CRACO/CRA */}
           <img 
-            src={`${window.location.origin}/chantaeclose14x11.jpg`} 
+            src="/chantaeclose14x11.jpg" 
             alt="Chantae Sierra - editorial portrait" 
             className="w-full h-full object-cover object-center block relative z-10"
-            onError={(e) => {
-              // Fallback backup path if your repository folder has case-sensitivity overrides
-              e.target.src = "/chantaeclose14x11.jpg";
-            }}
           />
 
           {/* Vertical Editorial Label */}
@@ -54,7 +50,7 @@ const Hero = () => {
         </div>
       </div>
 
-      {/* Mobile Location Footer Footer */}
+      {/* Mobile Location Footer */}
       <div className="absolute bottom-6 right-12 hidden md:flex gap-6 text-[10px] tracking-[0.2em] text-[#9A9386] uppercase font-light">
         <span>PARIS</span>
         <span>•</span>

@@ -35,7 +35,7 @@ function App() {
     e.preventDefault();
     const el = document.querySelector(href);
     if (el && lenisRef.current) {
-      lenisRef.current.scrollTo(el, { duration: 1.4 });
+      lenisRef.current.scrollTo(el, { duration: 1.4, offset: -110 });
     }
   };
 

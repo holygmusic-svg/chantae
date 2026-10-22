@@ -22,18 +22,18 @@ export const Hero = () => {
       data-testid="hero-section"
       className="relative min-h-screen flex flex-col justify-between overflow-hidden pt-28 md:pt-32"
     >
-      <div className="relative max-w-[1600px] mx-auto w-full px-6 md:px-12 grid grid-cols-12 gap-6 items-center flex-1">
-        <motion.div style={{ y: textY }} className="col-span-12 lg:col-span-7 relative z-10">
+      <div className="relative max-w-[1600px] mx-auto w-full px-6 md:px-12 grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-center flex-1">
+        <motion.div style={{ y: textY }} className="min-w-0 relative z-10">
           <MaskedLine delay={0.35}>
             <span className="label-ed text-[#A9967A] flex items-center gap-3">
               <FloraMark className="w-4 h-4" /> {CONTENT.brand} — {CONTENT.est}
             </span>
           </MaskedLine>
           <h1 className="font-serif-ed font-light uppercase leading-[0.9] tracking-tighter mt-8">
-            <MaskedLine delay={0.5} className="text-[13vw] lg:text-[8.5rem]">
+            <MaskedLine delay={0.5} className="text-[13vw] lg:text-[clamp(4rem,6.4vw,7.25rem)]">
               {CONTENT.nameLine1}
             </MaskedLine>
-            <MaskedLine delay={0.65} className="text-[13vw] lg:text-[8.5rem] italic text-[#A9967A]">
+            <MaskedLine delay={0.65} className="text-[13vw] lg:text-[clamp(4rem,6.4vw,7.25rem)] italic text-[#A9967A]">
               {CONTENT.nameLine2}
             </MaskedLine>
           </h1>
@@ -44,7 +44,7 @@ export const Hero = () => {
           </MaskedLine>
         </motion.div>
 
-        <div className="col-span-12 lg:col-span-5 relative mt-12 lg:mt-0">
+        <div className="min-w-0 relative mt-12 lg:mt-0">
           <motion.div
             initial={{ clipPath: "inset(100% 0 0 0)" }}
             animate={{ clipPath: "inset(0% 0 0 0)" }}
@@ -56,8 +56,8 @@ export const Hero = () => {
               src={HERO_IMG}
               alt={`${CONTENT.name} — editorial portrait`}
               data-testid="hero-portrait-image"
-              style={{ y: imgY, scale: 1.15 }}
-              className="w-full h-full object-cover will-change-transform"
+              style={{ y: imgY }}
+              className="w-full h-full object-contain bg-[#EEEAE4] will-change-transform"
             />
           </motion.div>
           <motion.div

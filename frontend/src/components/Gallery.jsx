@@ -5,14 +5,7 @@ import { Reveal } from "./Reveal";
 import { FloraMark } from "./Logo";
 import { CONTENT } from "@/content";
 
-const LAYOUT = [
-  { span: "col-span-12 md:col-span-7", ratio: "aspect-[4/5] md:aspect-[7/8]" },
-  { span: "col-span-12 md:col-span-5", ratio: "aspect-[3/4] md:aspect-[5/8]" },
-  { span: "col-span-12 md:col-span-5", ratio: "aspect-[3/4] md:aspect-[5/7]" },
-  { span: "col-span-12 md:col-span-7", ratio: "aspect-[4/5] md:aspect-[7/6]" },
-];
-
-const shots = CONTENT.gallery.map((g, i) => ({ ...g, ...LAYOUT[i % LAYOUT.length] }));
+const shots = CONTENT.gallery;
 
 export const Gallery = () => {
   const [open, setOpen] = useState(null);
@@ -38,7 +31,7 @@ export const Gallery = () => {
     <section
       id="portfolio"
       data-testid="gallery-section"
-      className="py-32 md:py-48"
+      className="py-24 md:py-36 scroll-mt-28"
     >
       <div className="max-w-[1600px] mx-auto px-6 md:px-12">
         <Reveal>
@@ -52,22 +45,22 @@ export const Gallery = () => {
           </div>
         </Reveal>
 
-        <div className="grid grid-cols-12 gap-6 md:gap-8 items-start">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-10 items-start">
           {shots.map((s, i) => (
-            <Reveal key={s.label} delay={i * 0.08} className={s.span}>
+            <Reveal key={s.label} delay={i * 0.08} className="min-w-0">
               <figure className="group" data-testid={`gallery-item-${i + 1}`}>
                 <button
                   type="button"
                   data-testid={`gallery-open-${i + 1}`}
                   onClick={() => setOpen(i)}
                   aria-label={`View ${s.label} full screen`}
-                  className={`block w-full ${s.ratio} overflow-hidden border border-[#A9967A]/40 cursor-pointer`}
+                  className="flex w-full aspect-[4/5] items-center justify-center overflow-hidden border border-[#A9967A]/40 bg-[#EEEAE4] cursor-pointer"
                 >
                   <img
                     src={s.src}
                     alt={s.alt}
                     loading="lazy"
-                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out"
+                    className="w-full h-full object-contain"
                   />
                 </button>
                 <figcaption className="flex items-center justify-between mt-4">

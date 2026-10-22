@@ -2,8 +2,7 @@ import { Reveal } from "./Reveal";
 import { FloraMark } from "./Logo";
 import { CONTENT } from "@/content";
 
-const ABOUT_IMG =
-  "https://images.unsplash.com/photo-1517462964-21fdcec3f25b?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NTY2NzF8MHwxfHNlYXJjaHwzfHxmYXNoaW9uJTIwbW9kZWwlMjBlZGl0b3JpYWwlMjBwb3J0cmFpdHxlbnwwfHx8fDE3OTI0NTcwMjJ8MA&ixlib=rb-4.1.0&q=85";
+const ABOUT_IMG = "/images/chantae/story.jpg";
 
 export const About = () => (
   <section

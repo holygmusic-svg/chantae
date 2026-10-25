@@ -38,6 +38,7 @@ export const CONTENT = {
     { label: "Hips", value: "32\"" },
     { label: "Eyes", value: "Brown" },
     { label: "Hair", value: "Black" },
+    { label: "Shoe", value: "9.5 US" },
   ],
 
   services: [

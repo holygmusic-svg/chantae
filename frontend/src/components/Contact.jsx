@@ -1,11 +1,7 @@
 import { useState } from "react";
-import axios from "axios";
-import { toast } from "sonner";
 import { Reveal } from "./Reveal";
 import { FloraMark } from "./Logo";
 import { CONTENT } from "@/content";
-
-const API = `${process.env.REACT_APP_BACKEND_URL}/api`;
 
 const fieldCls =
   "w-full bg-transparent border-0 border-b border-[#A9967A]/50 focus:border-[#1C1E1B] focus:outline-none focus:ring-0 rounded-none px-0 py-4 font-light text-base md:text-lg placeholder:text-[#5C5F5A]/60 transition-colors duration-300";
@@ -17,22 +13,22 @@ export const Contact = () => {
     inquiry_type: "booking",
     message: "",
   });
-  const [sending, setSending] = useState(false);
 
   const set = (k) => (e) => setForm({ ...form, [k]: e.target.value });
 
-  const submit = async (e) => {
+  const submit = (e) => {
     e.preventDefault();
-    setSending(true);
-    try {
-      await axios.post(`${API}/contact`, form);
-      toast.success("Enquiry received — a confirmation is on its way to your inbox.");
-      setForm({ name: "", email: "", inquiry_type: "booking", message: "" });
-    } catch (err) {
-      toast.error("Something went wrong. Please try again.");
-    } finally {
-      setSending(false);
-    }
+    const subject = `Chantae Sierra — ${form.inquiry_type} enquiry from ${form.name}`;
+    const body = [
+      `Name: ${form.name}`,
+      `Email: ${form.email}`,
+      `Enquiry type: ${form.inquiry_type}`,
+      "",
+      form.message,
+    ].join("\n");
+
+    // Open a prefilled email draft rather than storing messages without email delivery.
+    window.location.href = `mailto:${CONTENT.bookingEmail}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
   };
 
   return (
@@ -138,11 +134,11 @@ export const Contact = () => {
               <button
                 type="submit"
                 data-testid="contact-submit-button"
-                disabled={sending}
-                className="label-ed border border-[#1C1E1B] px-10 py-4 rounded-full hover:bg-[#1C1E1B] hover:text-[#F9F6F0] transition-colors duration-300 disabled:opacity-50 disabled:cursor-not-allowed"
+                className="label-ed border border-[#1C1E1B] px-10 py-4 rounded-full hover:bg-[#1C1E1B] hover:text-[#F9F6F0] transition-colors duration-300"
               >
-                {sending ? "Sending…" : "Send enquiry"}
+                Send enquiry
               </button>
+              <p className="text-xs text-[#5C5F5A]">Opens your email app with the enquiry prefilled; press Send there.</p>
             </form>
           </Reveal>
         </div>

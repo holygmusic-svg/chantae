@@ -40,7 +40,7 @@ export const Footer = () => (
         </a>
       </div>
       <span className="label-ed text-[#5C5F5A]">
-        © MMXXVI {CONTENT.brand}. All rights reserved.
+        © MMXXVII All rights reserved.
       </span>
     </div>
   </footer>

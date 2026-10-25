@@ -16,7 +16,8 @@ export const Footer = () => (
           </span>
         </div>
         <p className="label-ed text-[#5C5F5A] mt-4">
-          {CONTENT.brand} — {CONTENT.tagline}
+          <span className="block">{CONTENT.brand} —</span>
+          <span className="block mt-1">{CONTENT.tagline}</span>
         </p>
       </div>
       <div className="flex items-center gap-8">
@@ -40,7 +41,7 @@ export const Footer = () => (
         </a>
       </div>
       <span className="label-ed text-[#5C5F5A]">
-        © MMXXVI {CONTENT.brand}. All rights reserved.
+        © MMXXVII All rights reserved.
       </span>
     </div>
   </footer>

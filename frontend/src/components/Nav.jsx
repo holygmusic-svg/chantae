@@ -6,7 +6,7 @@ import { CONTENT } from "@/content";
 const links = [
   { label: "Story", href: "#story" },
   { label: "Digitals", href: "#digitals" },
-  { label: "Zcard", href: "/Chantae_Sierra_ZCard_A.pdf", pdf: true },
+  { label: "Zcard", href: "/Chantae_Sierra_ZCard_Download.pdf", pdf: true },
   { label: "Services", href: "#services" },
   { label: "Portfolio", href: "#portfolio" },
   { label: "Words", href: "#words" },

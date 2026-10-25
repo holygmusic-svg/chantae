@@ -11,34 +11,33 @@ export const CONTENT = {
   nameLine2: "Sierra",
   brand: "Ethereal Flora",
   est: "Est. MMXIX",
-  tagline: "Beauty & Fashion Model",
-  cities: "Paris — Milan — New York",
-  bookingEmail: "booking@chantaesierra.com",
+  tagline: "Beauty, Fashion Model, & Actor",
+  cities: "Paris — Milan — New York — Miami",
 
   socials: {
-    instagram: "https://www.instagram.com",
-    tiktok: "https://www.tiktok.com",
+    instagram: "https://www.instagram.com/chantilly_ladybug/",
+    tiktok: "https://www.tiktok.com/@chantilly_ladybug",
   },
 
   heroIntro:
-    "Beauty & fashion model. A wildflower muse moving between editorial stillness and runway motion — available for select campaigns worldwide.",
+    "Beauty, fashion model, & actor. A natural muse drifting between editorial stillness, film, and runway motion — available for select campaigns worldwide.",
 
   about: {
     paragraphs: [
       "Chantae Sierra is a beauty and fashion model whose work lives at the edge of romance and restraint. From quiet studio editorials to sculptural runway moments, her presence is deliberate — never decoration, always narrative.",
       "Represented across Paris, Milan and New York, she collaborates with photographers, stylists and maisons who believe an image should outlive its season.",
     ],
-    stat: "Seven seasons — four continents",
+    stat: "Luminous Poise. Effortless Radiance.",
   },
 
   digitals: [
-    { label: "Height", value: "5'10\" · 178 cm" },
-    { label: "Bust", value: "32\" · 81 cm" },
-    { label: "Waist", value: "24\" · 61 cm" },
-    { label: "Hips", value: "35\" · 89 cm" },
-    { label: "Shoe", value: "9 US · 40 EU" },
-    { label: "Hair", value: "Auburn" },
-    { label: "Eyes", value: "Hazel" },
+    { label: "Height", value: "5'9\"" },
+    { label: "Chest", value: "34\"" },
+    { label: "Waist", value: "29\"" },
+    { label: "Hips", value: "32\"" },
+    { label: "Eyes", value: "Brown" },
+    { label: "Hair", value: "Black" },
+    { label: "Shoe", value: "9.5 US" },
   ],
 
   services: [
@@ -55,7 +54,7 @@ export const CONTENT = {
     {
       n: "03",
       title: "Campaigns & Film",
-      desc: "Brand campaigns, motion portraits and short-form film with editorial sensibility.",
+      desc: "Brand campaigns, movies, motion portraits and short-form film with editorial sensibility.",
     },
     {
       n: "04",

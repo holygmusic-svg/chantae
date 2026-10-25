@@ -167,16 +167,22 @@ export const CONTENT = {
       caption: "Chantae Sierra — monochrome portrait.",
     },
     {
-      src: "/images/chantae/portfolio-17.jpg",
-      alt: "Chantae Sierra — Studio Fashion",
-      label: "Studio Fashion 17",
-      caption: "Chantae Sierra — studio fashion.",
-    },
-    {
       src: "/images/chantae/portfolio-18.jpg",
       alt: "Chantae Sierra — Fashion Editorial",
       label: "Fashion Editorial 18",
       caption: "Chantae Sierra — fashion editorial.",
+    },
+    {
+      src: "/images/chantae/runway-editorial-19.jpg",
+      alt: "Chantae Sierra in a silver-blue runway look and colorful flowing cover-up",
+      label: "Runway Editorial 19",
+      caption: "Chantae Sierra — runway fashion.",
+    },
+    {
+      src: "/images/chantae/runway-editorial-20.jpg",
+      alt: "Chantae Sierra walking the runway in a turquoise top and polka-dot skirt",
+      label: "Runway Editorial 20",
+      caption: "Chantae Sierra — runway fashion.",
     },
   ],
 

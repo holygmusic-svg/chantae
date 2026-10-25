@@ -6,6 +6,7 @@ import { Nav } from "@/components/Nav";
 import { Hero } from "@/components/Hero";
 import { Marquee } from "@/components/Marquee";
 import { About } from "@/components/About";
+import { Resume } from "@/components/Resume";
 import { Digitals } from "@/components/Digitals";
 import { Services } from "@/components/Services";
 import { Gallery } from "@/components/Gallery";
@@ -48,6 +49,7 @@ function App() {
         <Hero />
         <Marquee />
         <About />
+        <Resume />
         <Digitals />
         <Services />
         <Gallery />

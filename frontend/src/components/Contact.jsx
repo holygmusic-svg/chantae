@@ -56,13 +56,22 @@ export const Contact = () => {
               directly — every enquiry is read personally and lands straight in
               the studio inbox.
             </p>
-            <a
-              href={`mailto:${CONTENT.bookingEmail}`}
-              data-testid="contact-email-link"
-              className="label-ed text-[#1C1E1B] mt-8 inline-block border-b border-[#A9967A] pb-1 hover:text-[#A9967A] transition-colors duration-300"
-            >
-              {CONTENT.bookingEmail}
-            </a>
+            <div className="mt-8 flex flex-col items-start gap-3">
+              <a
+                href={`mailto:${CONTENT.bookingEmail}`}
+                data-testid="contact-email-link"
+                className="label-ed text-[#1C1E1B] inline-block border-b border-[#A9967A] pb-1 hover:text-[#A9967A] transition-colors duration-300"
+              >
+                {CONTENT.bookingEmail}
+              </a>
+              <a
+                href="tel:+17868168148"
+                data-testid="contact-phone-link"
+                className="label-ed text-[#1C1E1B] inline-block border-b border-[#A9967A] pb-1 hover:text-[#A9967A] transition-colors duration-300"
+              >
+                786-816-8148
+              </a>
+            </div>
           </Reveal>
         </div>
 

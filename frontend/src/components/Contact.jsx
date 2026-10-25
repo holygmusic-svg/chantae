@@ -1,10 +1,9 @@
 import { useState } from "react";
 import { Reveal } from "./Reveal";
 import { FloraMark } from "./Logo";
-import { CONTENT } from "@/content";
 
 const fieldCls =
-  "w-full bg-transparent border-0 border-b border-[#A9967A]/50 focus:border-[#1C1E1B] focus:outline-none focus:ring-0 rounded-none px-0 py-4 font-light text-base md:text-lg placeholder:text-[#5C5F5A]/60 transition-colors duration-300";
+  "w-full bg-transparent border-0 border-b border-[#A9967A]/50 focus:border-[#1C1E1B] focus:outline-none focus:ring-0 rounded-none px-0 py-1.5 font-light text-base md:text-lg placeholder:text-[#5C5F5A]/60 transition-colors duration-300";
 
 // Construct contact destinations only after a visitor interacts.
 // This deters basic email/phone scrapers; it cannot stop sophisticated bots.
@@ -14,6 +13,8 @@ const bookingPhone = () => String.fromCharCode(43, 49, 55, 56, 54, 56, 49, 54, 5
 const contactButtonClass =
   "inline-flex items-center justify-center text-sm md:text-base tracking-[0.06em] font-light rounded-full border border-[#1C1E1B] px-6 py-3 text-[#1C1E1B] hover:bg-[#1C1E1B] hover:text-[#F9F6F0] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 transition-colors duration-300";
 
+const FORMSPREE_ENDPOINT = "https://formspree.io/f/xoeejovp";
+
 export const Contact = () => {
   const [form, setForm] = useState({
     name: "",
@@ -22,21 +23,47 @@ export const Contact = () => {
     message: "",
   });
 
-  const set = (k) => (e) => setForm({ ...form, [k]: e.target.value });
+  const [isSending, setIsSending] = useState(false);
+  const [feedback, setFeedback] = useState(null);
 
-  const submit = (e) => {
+  const set = (k) => (e) => setForm((current) => ({ ...current, [k]: e.target.value }));
+
+  const submit = async (e) => {
     e.preventDefault();
-    const subject = `Chantae Sierra — ${form.inquiry_type} enquiry from ${form.name}`;
-    const body = [
-      `Name: ${form.name}`,
-      `Email: ${form.email}`,
-      `Enquiry type: ${form.inquiry_type}`,
-      "",
-      form.message,
-    ].join("\n");
+    if (isSending) return;
 
-    // Open a prefilled email draft rather than storing messages without email delivery.
-    window.location.href = `mailto:${bookingEmail()}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+    setIsSending(true);
+    setFeedback(null);
+
+    const payload = new FormData(e.currentTarget);
+    payload.set("_subject", `Chantae Sierra — ${form.inquiry_type} enquiry from ${form.name}`);
+
+    try {
+      const response = await fetch(FORMSPREE_ENDPOINT, {
+        method: "POST",
+        body: payload,
+        headers: { Accept: "application/json" },
+      });
+
+      if (!response.ok) {
+        const errorData = await response.json().catch(() => null);
+        const message = errorData?.errors?.map((error) => error.message).filter(Boolean).join(" ");
+        throw new Error(message || "The enquiry could not be sent. Please try again.");
+      }
+
+      setForm({ name: "", email: "", inquiry_type: "booking", message: "" });
+      setFeedback({
+        type: "success",
+        message: "Thank you! Your enquiry has been sent successfully.",
+      });
+    } catch (error) {
+      setFeedback({
+        type: "error",
+        message: error.message || "There was a connection problem. Please try again.",
+      });
+    } finally {
+      setIsSending(false);
+    }
   };
 
   return (
@@ -92,13 +119,29 @@ export const Contact = () => {
 
         <div className="col-span-12 lg:col-span-6 lg:col-start-7">
           <Reveal delay={0.15}>
-            <form onSubmit={submit} data-testid="contact-form" className="space-y-10">
+            <form
+              onSubmit={submit}
+              action={FORMSPREE_ENDPOINT}
+              method="POST"
+              aria-busy={isSending}
+              data-testid="contact-form"
+              className="w-full max-w-[600px] space-y-3"
+            >
+              <input
+                type="text"
+                name="_gotcha"
+                aria-hidden="true"
+                tabIndex={-1}
+                autoComplete="off"
+                className="absolute -left-[9999px] w-px h-px overflow-hidden"
+              />
               <div>
                 <label htmlFor="contact-name" className="label-ed text-[#5C5F5A]">
                   Name
                 </label>
                 <input
                   id="contact-name"
+                  name="name"
                   data-testid="contact-name-input"
                   type="text"
                   required
@@ -114,6 +157,7 @@ export const Contact = () => {
                 </label>
                 <input
                   id="contact-email"
+                  name="email"
                   data-testid="contact-email-input"
                   type="email"
                   required
@@ -129,6 +173,7 @@ export const Contact = () => {
                 </label>
                 <select
                   id="contact-type"
+                  name="inquiry_type"
                   data-testid="contact-type-select"
                   value={form.inquiry_type}
                   onChange={set("inquiry_type")}
@@ -146,23 +191,40 @@ export const Contact = () => {
                 </label>
                 <textarea
                   id="contact-message"
+                  name="message"
                   data-testid="contact-message-input"
                   required
-                  rows={4}
+                  rows={2}
                   value={form.message}
                   onChange={set("message")}
                   placeholder="Tell us about the project, dates and location…"
                   className={`${fieldCls} resize-none`}
                 />
               </div>
-              <button
-                type="submit"
-                data-testid="contact-submit-button"
-                className="label-ed border border-[#1C1E1B] px-10 py-4 rounded-full hover:bg-[#1C1E1B] hover:text-[#F9F6F0] transition-colors duration-300"
-              >
-                Send enquiry
-              </button>
-              <p className="text-xs text-[#5C5F5A]">Opens your email app with the enquiry prefilled; press Send there.</p>
+              <div className="flex flex-col items-start gap-3">
+                <button
+                  type="submit"
+                  disabled={isSending}
+                  data-testid="contact-submit-button"
+                  className="label-ed border border-[#1C1E1B] px-10 py-3 rounded-full hover:bg-[#1C1E1B] hover:text-[#F9F6F0] disabled:opacity-50 disabled:cursor-wait transition-colors duration-300"
+                >
+                  {isSending ? "Sending…" : "Send enquiry"}
+                </button>
+                {feedback ? (
+                  <p
+                    role={feedback.type === "error" ? "alert" : "status"}
+                    aria-live={feedback.type === "error" ? "assertive" : "polite"}
+                    data-testid="contact-form-feedback"
+                    className={`text-sm leading-relaxed ${feedback.type === "error" ? "text-[#9F3F37]" : "text-[#4F6757]"}`}
+                  >
+                    {feedback.message}
+                  </p>
+                ) : (
+                  <p className="text-xs text-[#5C5F5A]">
+                    Send directly through the website. No email app required.
+                  </p>
+                )}
+              </div>
             </form>
           </Reveal>
         </div>

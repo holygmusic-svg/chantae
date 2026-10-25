@@ -12,7 +12,7 @@ export const CONTENT = {
   brand: "Ethereal Flora",
   est: "Est. MMXIX",
   tagline: "Beauty & Fashion Model",
-  cities: "Paris — Milan — New York",
+  cities: "Paris — Milan — New York — Miami",
   bookingEmail: "booking@chantaesierra.com",
 
   socials: {
@@ -21,7 +21,7 @@ export const CONTENT = {
   },
 
   heroIntro:
-    "Beauty & fashion model. A wildflower muse moving between editorial stillness and runway motion — available for select campaigns worldwide.",
+    "Beauty & fashion model. A natural muse drifting between editorial stillness, production, and runway motion — available for select campaigns worldwide.",
 
   about: {
     paragraphs: [

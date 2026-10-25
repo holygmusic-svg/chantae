@@ -63,10 +63,7 @@ export const Gallery = () => {
                     className="w-full h-full object-contain"
                   />
                 </button>
-                <figcaption className="flex items-center justify-between mt-4">
-                  <span className="font-serif-ed italic text-xl text-[#1C1E1B]">
-                    {s.label}
-                  </span>
+                <figcaption className="flex items-center justify-end mt-4">
                   <span className="label-ed text-[#5C5F5A]">
                     {String(i + 1).padStart(2, "0")}
                   </span>
@@ -129,18 +126,7 @@ export const Gallery = () => {
                 data-testid="lightbox-image"
                 className="w-full max-h-[72vh] object-contain border border-[#A9967A]/40"
               />
-              <figcaption className="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-3 mt-6">
-                <div>
-                  <div
-                    data-testid="lightbox-caption-title"
-                    className="font-serif-ed italic text-2xl md:text-3xl text-[#F9F6F0]"
-                  >
-                    {shots[open].label}
-                  </div>
-                  <div className="text-sm font-light text-[#F9F6F0]/70 mt-2">
-                    {shots[open].caption}
-                  </div>
-                </div>
+              <figcaption className="flex items-center justify-end mt-6">
                 <span className="label-ed text-[#A9967A]">
                   {String(open + 1).padStart(2, "0")} / {String(shots.length).padStart(2, "0")}
                 </span>

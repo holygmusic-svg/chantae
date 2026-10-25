@@ -6,7 +6,7 @@ const experience = [
   "Melanin Day Art Basel Week Showcase at Arthood56 Gallery",
   "Art of Healing Community Center Fundraiser at Mosaic Miami",
   "Small Business Fashion Week Show Atlanta",
-  "Haute Headz Salon Fashion for Cure",
+  "Haute Headz Salon Fashion for a Cure Show, Tallahassee",
   "Narcissus Fashion Show at Honey Lake Plantation Resort and Spa",
 ];
 

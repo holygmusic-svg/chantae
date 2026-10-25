@@ -66,7 +66,7 @@ export const Hero = () => {
             transition={{ delay: 1.8, duration: 1 }}
             className="hidden lg:flex absolute -left-16 top-1/2 -translate-y-1/2 -rotate-90 origin-center label-ed text-[#5C5F5A] whitespace-nowrap"
           >
-            {CONTENT.tagline} — Editorial
+            Beauty — Fashion Model — Actor — Editorial
           </motion.div>
         </div>
       </div>

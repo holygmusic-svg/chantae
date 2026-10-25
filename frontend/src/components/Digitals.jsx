@@ -36,10 +36,10 @@ export const Digitals = () => (
       <Reveal>
         <div className="mt-7 flex justify-center">
           <a
-            href="/Chantae_Sierra_ZCard_A.pdf"
+            href="/Chantae_Sierra_ZCard_Download.pdf"
             target="_blank"
             rel="noopener noreferrer"
-            download="Chantae_Sierra_ZCard_A.pdf"
+            download="Chantae_Sierra_ZCard_Download.pdf"
             className="label-ed inline-flex items-center justify-center rounded-full border border-[#1C1E1B] px-7 py-3 text-[#1C1E1B] hover:bg-[#1C1E1B] hover:text-[#F9F6F0] transition-colors duration-300"
             data-testid="download-zcard-button"
           >

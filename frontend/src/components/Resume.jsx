@@ -10,6 +10,8 @@ const experience = [
   "Narcissus Fashion Show at Honey Lake Plantation Resort and Spa",
 ];
 
+const promotions = ["Kellogg's", "Ulta", "Jim Beam", "Twang Partners"];
+
 const training = [
   {
     school: "Marsha Doll Models",
@@ -65,18 +67,28 @@ export const Resume = () => (
       </Reveal>
 
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-14 lg:gap-20">
-        <Reveal delay={0.1}>
-          <div className="border-t border-[#A9967A]/50 pt-6">
+        <Reveal delay={0.1} className="h-full">
+          <div className="border-t border-[#A9967A]/50 pt-6 h-full flex flex-col">
             <h3 className="label-ed text-[#1C1E1B] mb-8">Experience</h3>
-            <ul className="space-y-6 text-base md:text-lg leading-relaxed font-light text-[#5C5F5A]">
+            <ul className="space-y-3 text-sm md:text-base leading-relaxed font-light text-[#5C5F5A]">
               {experience.map((entry) => (
                 <Bullet key={entry}>{entry}</Bullet>
               ))}
             </ul>
+            <div className="mt-auto pt-8">
+              <div className="border-t border-[#A9967A]/40 pt-6">
+                <h3 className="label-ed text-[#1C1E1B] mb-5">Promotions</h3>
+                <ul className="grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-3 text-sm md:text-base leading-relaxed font-light text-[#5C5F5A]">
+                  {promotions.map((brand) => (
+                    <Bullet key={brand}>{brand}</Bullet>
+                  ))}
+                </ul>
+              </div>
+            </div>
           </div>
         </Reveal>
 
-        <Reveal delay={0.2}>
+        <Reveal delay={0.2} className="h-full">
           <div className="border-t border-[#A9967A]/50 pt-6">
             <h3 className="label-ed text-[#1C1E1B] mb-8">Training</h3>
             <div className="space-y-10">

@@ -119,7 +119,7 @@ export const Contact = () => {
           </Reveal>
         </div>
 
-        <div className="col-span-12 lg:col-span-6 lg:col-start-7">
+        <div className="col-span-12 lg:col-span-6 lg:col-start-7 lg:pt-20 xl:pt-24 2xl:pt-0">
           <Reveal delay={0.15}>
             <form
               onSubmit={submit}

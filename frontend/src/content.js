@@ -32,12 +32,12 @@ export const CONTENT = {
 
   digitals: [
     { label: "Height", value: "5'9\"" },
-    { label: "Chest", value: "34\"" },
-    { label: "Waist", value: "29\"" },
-    { label: "Hips", value: "32\"" },
+    { label: "Chest", value: "36\"" },
+    { label: "Waist", value: "31\"" },
+    { label: "Hips", value: "39.5\"" },
     { label: "Eyes", value: "Brown" },
     { label: "Hair", value: "Black" },
-    { label: "Shoe", value: "9.5 US" },
+    { label: "Shoe", value: "9 US" },
   ],
 
   services: [

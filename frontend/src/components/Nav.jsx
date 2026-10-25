@@ -6,6 +6,7 @@ import { CONTENT } from "@/content";
 const links = [
   { label: "Story", href: "#story" },
   { label: "Digitals", href: "#digitals" },
+  { label: "Zcard", href: "/Chantae_Sierra_ZCard_A.pdf", external: true },
   { label: "Services", href: "#services" },
   { label: "Portfolio", href: "#portfolio" },
   { label: "Words", href: "#words" },
@@ -50,7 +51,9 @@ export const Nav = ({ onAnchor }) => {
               key={l.href}
               href={l.href}
               data-testid={`nav-link-${l.label.toLowerCase()}`}
-              onClick={(e) => onAnchor(e, l.href)}
+              onClick={l.external ? undefined : (e) => onAnchor(e, l.href)}
+              target={l.external ? "_blank" : undefined}
+              rel={l.external ? "noopener noreferrer" : undefined}
               className="label-ed text-[#5C5F5A] hover:text-[#1C1E1B] transition-colors duration-300"
             >
               {l.label}

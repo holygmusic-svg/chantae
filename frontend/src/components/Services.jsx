@@ -6,11 +6,11 @@ export const Services = () => (
   <section
     id="services"
     data-testid="services-section"
-    className="py-32 md:py-40 bg-[#EBE6DF]/50"
+    className="py-12 md:py-16 bg-[#EBE6DF]/50"
   >
     <div className="max-w-[1600px] mx-auto px-6 md:px-12">
       <Reveal>
-        <div className="flex items-end justify-between mb-20">
+        <div className="flex items-end justify-between mb-7 md:mb-9">
           <h2 className="font-serif-ed font-light text-4xl md:text-6xl tracking-tight">
             Services
           </h2>
@@ -24,12 +24,12 @@ export const Services = () => (
           <Reveal key={s.n} delay={i * 0.08}>
             <div
               data-testid={`service-item-${s.n}`}
-              className="group grid grid-cols-12 gap-4 items-baseline border-t border-[#A9967A]/40 py-10 md:py-12 hover:bg-[#F9F6F0] transition-colors duration-500 px-2 md:px-6"
+              className="group grid grid-cols-12 gap-4 items-baseline border-t border-[#A9967A]/25 py-5 md:py-6 hover:bg-[#F9F6F0] transition-colors duration-500 px-2 md:px-4"
             >
-              <span className="col-span-2 md:col-span-1 font-serif-ed italic text-2xl md:text-3xl text-[#A9967A]">
+              <span className="col-span-2 md:col-span-1 font-serif-ed italic text-xl md:text-2xl text-[#A9967A]">
                 {s.n}
               </span>
-              <h3 className="col-span-10 md:col-span-4 font-serif-ed font-light text-2xl md:text-4xl tracking-tight">
+              <h3 className="col-span-10 md:col-span-4 font-serif-ed font-light text-xl md:text-3xl tracking-tight">
                 {s.title}
               </h3>
               <p className="col-span-10 col-start-3 md:col-span-6 md:col-start-6 text-sm md:text-base font-light leading-relaxed text-[#5C5F5A]">
@@ -39,7 +39,7 @@ export const Services = () => (
             </div>
           </Reveal>
         ))}
-        <div className="border-t border-[#A9967A]/40" />
+        <div className="border-t border-[#A9967A]/25" />
       </div>
     </div>
   </section>

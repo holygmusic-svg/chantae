@@ -62,7 +62,6 @@ export const Resume = () => (
               Resume
             </h2>
           </div>
-          <span className="label-ed text-[#5C5F5A]">Experience &amp; Training</span>
         </div>
       </Reveal>
 

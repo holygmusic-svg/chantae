@@ -6,6 +6,7 @@ const items = [
   "Runway",
   "Campaign",
   "Beauty",
+  "Film",
   "Muse",
   "Print",
 ];

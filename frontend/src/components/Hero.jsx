@@ -4,7 +4,7 @@ import { MaskedLine } from "./Reveal";
 import { FloraMark } from "./Logo";
 import { CONTENT } from "@/content";
 
-const HERO_IMG = "/images/chantae/hero.jpg";
+const HERO_IMG = "/images/chantae/hero-smile.jpg";
 
 export const Hero = () => {
   const ref = useRef(null);

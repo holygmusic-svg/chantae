@@ -12,7 +12,7 @@ const bookingEmail = () => String.fromCharCode(98, 111, 111, 107, 105, 110, 103,
 const bookingPhone = () => String.fromCharCode(43, 49, 55, 56, 54, 56, 49, 54, 56, 49, 52, 56);
 
 const contactButtonClass =
-  "label-ed inline-flex items-center justify-center rounded-full border border-[#1C1E1B] px-6 py-3 text-[#1C1E1B] hover:bg-[#1C1E1B] hover:text-[#F9F6F0] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 transition-colors duration-300";
+  "inline-flex items-center justify-center text-sm md:text-base tracking-[0.06em] font-light rounded-full border border-[#1C1E1B] px-6 py-3 text-[#1C1E1B] hover:bg-[#1C1E1B] hover:text-[#F9F6F0] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 transition-colors duration-300";
 
 export const Contact = () => {
   const [form, setForm] = useState({
@@ -72,7 +72,7 @@ export const Contact = () => {
                 onClick={() => { window.location.href = `mailto:${bookingEmail()}`; }}
                 className={contactButtonClass}
               >
-                Email Booking
+                {bookingEmail()}
               </button>
               <button
                 type="button"
@@ -81,7 +81,7 @@ export const Contact = () => {
                 onClick={() => { window.location.href = `tel:${bookingPhone()}`; }}
                 className={contactButtonClass}
               >
-                Call Booking
+                {bookingPhone().replace(/^\+1(\d{3})(\d{3})(\d{4})$/, "$1-$2-$3")}
               </button>
             </div>
             <p className="mt-3 text-xs text-[#5C5F5A]">

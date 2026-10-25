@@ -13,7 +13,6 @@ export const CONTENT = {
   est: "Est. MMXIX",
   tagline: "Beauty, Fashion Model, & Actor",
   cities: "Paris — Milan — New York — Miami",
-  bookingEmail: "booking@Chantae.me",
 
   socials: {
     instagram: "https://www.instagram.com/chantilly_ladybug/",

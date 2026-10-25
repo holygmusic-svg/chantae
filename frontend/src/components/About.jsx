@@ -19,9 +19,9 @@ export const About = () => (
         </Reveal>
         <Reveal delay={0.1}>
           <h2 className="font-serif-ed font-light text-4xl md:text-6xl lg:text-7xl leading-[1.05] tracking-tight mt-8">
-            An organic <strong className="font-bold"><em className="italic text-[#A9967A]">muse</em></strong>,
+            An organic <em className="italic text-[#A9967A]">muse</em>,
             <br />
-            timelessly <strong className="font-bold"><em className="italic">framed</em></strong>...
+            timelessly <em className="italic">framed</em>...
           </h2>
         </Reveal>
         <Reveal delay={0.2} className="mt-10 max-w-xl">

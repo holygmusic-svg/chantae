@@ -26,7 +26,7 @@ export const Hero = () => {
         <motion.div style={{ y: textY }} className="min-w-0 relative z-10">
           <MaskedLine delay={0.35}>
             <span className="label-ed text-[#A9967A] flex items-center gap-3">
-              <FloraMark className="w-4 h-4" /> {CONTENT.brand} — {CONTENT.est}
+              <FloraMark className="w-4 h-4" /> {CONTENT.brand}
             </span>
           </MaskedLine>
           <h1 className="font-serif-ed font-light uppercase leading-[0.9] tracking-tighter mt-8">
@@ -64,7 +64,7 @@ export const Hero = () => {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 1.8, duration: 1 }}
-            className="hidden lg:flex absolute -left-24 top-1/2 -translate-y-1/2 -rotate-90 origin-center label-ed text-[#5C5F5A] whitespace-nowrap"
+            className="hidden lg:flex absolute -left-28 top-1/2 -translate-y-1/2 -rotate-90 origin-center label-ed text-[#5C5F5A] whitespace-nowrap"
           >
             Beauty — Fashion Model — Actor — Editorial
           </motion.div>

@@ -64,7 +64,7 @@ export const Hero = () => {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 1.8, duration: 1 }}
-            className="hidden lg:flex absolute -left-16 top-1/2 -translate-y-1/2 -rotate-90 origin-center label-ed text-[#5C5F5A] whitespace-nowrap"
+            className="hidden lg:flex absolute left-4 lg:left-6 top-1/2 -translate-y-1/2 -rotate-90 origin-center label-ed text-[#5C5F5A] whitespace-nowrap"
           >
             Beauty — Fashion Model — Actor — Editorial
           </motion.div>

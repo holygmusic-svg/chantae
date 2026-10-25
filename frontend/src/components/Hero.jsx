@@ -26,7 +26,7 @@ export const Hero = () => {
         <motion.div style={{ y: textY }} className="min-w-0 relative z-10">
           <MaskedLine delay={0.35}>
             <span className="label-ed text-[#A9967A] flex items-center gap-3">
-              <FloraMark className="w-4 h-4" /> {CONTENT.brand}
+              <FloraMark className="w-4 h-4" /> {CONTENT.brand} —
             </span>
           </MaskedLine>
           <h1 className="font-serif-ed font-light uppercase leading-[0.9] tracking-tighter mt-8">

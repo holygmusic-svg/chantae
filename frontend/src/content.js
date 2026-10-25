@@ -28,7 +28,7 @@ export const CONTENT = {
       "Chantae Sierra is a beauty and fashion model whose work lives at the edge of romance and restraint. From quiet studio editorials to sculptural runway moments, her presence is deliberate — never decoration, always narrative.",
       "Represented across Paris, Milan and New York, she collaborates with photographers, stylists and maisons who believe an image should outlive its season.",
     ],
-    stat: "Seven seasons — four continents",
+    stat: "Luminous Poise. Effortless Radiance.",
   },
 
   digitals: [

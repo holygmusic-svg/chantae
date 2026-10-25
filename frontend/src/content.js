@@ -66,6 +66,12 @@ export const CONTENT = {
 
   gallery: [
     {
+      src: "/images/chantae/hero.jpg",
+      alt: "Chantae Sierra — black gown editorial portrait",
+      label: "Black Gown Editorial",
+      caption: "Chantae Sierra — black gown studio portrait.",
+    },
+    {
       src: "/images/chantae/portfolio-01.jpg",
       alt: "Chantae Sierra — Portrait Study",
       label: "Portrait Study 01",

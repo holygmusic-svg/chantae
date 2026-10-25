@@ -5,13 +5,13 @@ export const Testimonials = () => (
   <section
     id="words"
     data-testid="testimonials-section"
-    className="py-32 md:py-40 bg-[#1C1E1B] text-[#F9F6F0]"
+    className="py-12 md:py-16 bg-[#1C1E1B] text-[#F9F6F0]"
   >
     <div className="max-w-[1600px] mx-auto px-6 md:px-12">
       <Reveal>
         <span className="label-ed text-[#A9967A]">Words from the field</span>
       </Reveal>
-      <div className="mt-16 grid grid-cols-12 gap-10 md:gap-8">
+      <div className="mt-7 md:mt-9 grid grid-cols-12 gap-6 md:gap-7">
         {CONTENT.testimonials.map((q, i) => (
           <Reveal
             key={i}
@@ -20,12 +20,12 @@ export const Testimonials = () => (
           >
             <blockquote
               data-testid={`testimonial-${i + 1}`}
-              className="border-t border-[#A9967A]/40 pt-8 h-full flex flex-col"
+              className="border-t border-[#A9967A]/25 pt-4 md:pt-5 h-full flex flex-col"
             >
-              <p className="font-serif-ed italic font-light text-2xl md:text-[1.7rem] leading-snug flex-1">
+              <p className="font-serif-ed italic font-light text-xl md:text-2xl leading-snug flex-1">
                 “{q.text}”
               </p>
-              <cite className="label-ed text-[#A9967A] not-italic mt-8 block">
+              <cite className="label-ed text-[#A9967A] not-italic mt-4 md:mt-5 block">
                 {q.source}
               </cite>
             </blockquote>

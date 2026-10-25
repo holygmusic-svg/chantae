@@ -172,6 +172,18 @@ export const CONTENT = {
       label: "Fashion Editorial 18",
       caption: "Chantae Sierra — fashion editorial.",
     },
+    {
+      src: "/images/chantae/runway-editorial-19.jpg",
+      alt: "Chantae Sierra in a silver-blue runway look and colorful flowing cover-up",
+      label: "Runway Editorial 19",
+      caption: "Chantae Sierra — runway fashion.",
+    },
+    {
+      src: "/images/chantae/runway-editorial-20.jpg",
+      alt: "Chantae Sierra walking the runway in a turquoise top and polka-dot skirt",
+      label: "Runway Editorial 20",
+      caption: "Chantae Sierra — runway fashion.",
+    },
   ],
 
   testimonials: [

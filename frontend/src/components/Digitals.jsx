@@ -18,7 +18,7 @@ export const Digitals = () => (
           </span>
         </div>
       </Reveal>
-      <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 border-t border-l border-[#A9967A]/25">
+      <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-7 border-t border-l border-[#A9967A]/25">
         {CONTENT.digitals.map((d, i) => (
           <Reveal key={d.label} delay={i * 0.05} y={20}>
             <div

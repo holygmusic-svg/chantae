@@ -72,13 +72,13 @@ export const CONTENT = {
       caption: "Chantae Sierra — black gown studio portrait.",
     },
     {
-      src: "/images/chantae/portfolio-01.jpg",
+      src: "/images/chantae/portrait-study-01-new.jpg",
       alt: "Chantae Sierra — Portrait Study",
       label: "Portrait Study 01",
       caption: "Chantae Sierra — portrait study.",
     },
     {
-      src: "/images/chantae/portfolio-02.jpg",
+      src: "/images/chantae/outdoor-editorial-02-new.jpg",
       alt: "Chantae Sierra — Outdoor Editorial",
       label: "Outdoor Editorial 02",
       caption: "Chantae Sierra — outdoor editorial.",

@@ -16,7 +16,8 @@ export const Footer = () => (
           </span>
         </div>
         <p className="label-ed text-[#5C5F5A] mt-4">
-          {CONTENT.brand} — {CONTENT.tagline}
+          <span className="block">{CONTENT.brand} —</span>
+          <span className="block mt-1">{CONTENT.tagline}</span>
         </p>
       </div>
       <div className="flex items-center gap-8">

@@ -3,7 +3,7 @@ import { Reveal } from "./Reveal";
 import { FloraMark } from "./Logo";
 
 const fieldCls =
-  "w-full bg-transparent border-0 border-b border-[#A9967A]/50 focus:border-[#1C1E1B] focus:outline-none focus:ring-0 rounded-none px-0 py-3 font-light text-base md:text-lg placeholder:text-[#5C5F5A]/60 transition-colors duration-300";
+  "w-full bg-transparent border-0 border-b border-[#A9967A]/50 focus:border-[#1C1E1B] focus:outline-none focus:ring-0 rounded-none px-0 py-2.5 font-light text-base md:text-lg placeholder:text-[#5C5F5A]/60 transition-colors duration-300";
 
 // Construct contact destinations only after a visitor interacts.
 // This deters basic email/phone scrapers; it cannot stop sophisticated bots.
@@ -125,7 +125,7 @@ export const Contact = () => {
               method="POST"
               aria-busy={isSending}
               data-testid="contact-form"
-              className="space-y-5"
+              className="w-full max-w-[600px] space-y-4"
             >
               <input
                 type="text"
@@ -194,7 +194,7 @@ export const Contact = () => {
                   name="message"
                   data-testid="contact-message-input"
                   required
-                  rows={3}
+                  rows={2}
                   value={form.message}
                   onChange={set("message")}
                   placeholder="Tell us about the project, dates and location…"

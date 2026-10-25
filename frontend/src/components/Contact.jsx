@@ -6,6 +6,14 @@ import { CONTENT } from "@/content";
 const fieldCls =
   "w-full bg-transparent border-0 border-b border-[#A9967A]/50 focus:border-[#1C1E1B] focus:outline-none focus:ring-0 rounded-none px-0 py-4 font-light text-base md:text-lg placeholder:text-[#5C5F5A]/60 transition-colors duration-300";
 
+// Construct contact destinations only after a visitor interacts.
+// This deters basic email/phone scrapers; it cannot stop sophisticated bots.
+const bookingEmail = () => String.fromCharCode(98, 111, 111, 107, 105, 110, 103, 64, 67, 104, 97, 110, 116, 97, 101, 46, 109, 101);
+const bookingPhone = () => String.fromCharCode(43, 49, 55, 56, 54, 56, 49, 54, 56, 49, 52, 56);
+
+const contactButtonClass =
+  "label-ed inline-flex items-center justify-center rounded-full border border-[#1C1E1B] px-6 py-3 text-[#1C1E1B] hover:bg-[#1C1E1B] hover:text-[#F9F6F0] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 transition-colors duration-300";
+
 export const Contact = () => {
   const [form, setForm] = useState({
     name: "",
@@ -28,7 +36,7 @@ export const Contact = () => {
     ].join("\n");
 
     // Open a prefilled email draft rather than storing messages without email delivery.
-    window.location.href = `mailto:${CONTENT.bookingEmail}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+    window.location.href = `mailto:${bookingEmail()}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
   };
 
   return (
@@ -56,22 +64,29 @@ export const Contact = () => {
               directly — every enquiry is read personally and lands straight in
               the studio inbox.
             </p>
-            <div className="mt-8 flex flex-col items-start gap-3">
-              <a
-                href={`mailto:${CONTENT.bookingEmail}`}
-                data-testid="contact-email-link"
-                className="label-ed text-[#1C1E1B] inline-block border-b border-[#A9967A] pb-1 hover:text-[#A9967A] transition-colors duration-300"
+            <div className="mt-8 flex flex-wrap gap-3">
+              <button
+                type="button"
+                data-testid="contact-email-button"
+                aria-label="Email Chantae Sierra booking"
+                onClick={() => { window.location.href = `mailto:${bookingEmail()}`; }}
+                className={contactButtonClass}
               >
-                {CONTENT.bookingEmail}
-              </a>
-              <a
-                href="tel:+17868168148"
-                data-testid="contact-phone-link"
-                className="label-ed text-[#1C1E1B] inline-block border-b border-[#A9967A] pb-1 hover:text-[#A9967A] transition-colors duration-300"
+                Email Booking
+              </button>
+              <button
+                type="button"
+                data-testid="contact-phone-button"
+                aria-label="Call Chantae Sierra booking"
+                onClick={() => { window.location.href = `tel:${bookingPhone()}`; }}
+                className={contactButtonClass}
               >
-                786-816-8148
-              </a>
+                Call Booking
+              </button>
             </div>
+            <p className="mt-3 text-xs text-[#5C5F5A]">
+              Choose an option to open your email or calling app.
+            </p>
           </Reveal>
         </div>
 

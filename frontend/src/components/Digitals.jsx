@@ -33,6 +33,20 @@ export const Digitals = () => (
           </Reveal>
         ))}
       </div>
+      <Reveal>
+        <div className="mt-12 flex justify-center">
+          <a
+            href="/Chantae_Sierra_ZCard_A.pdf"
+            target="_blank"
+            rel="noopener noreferrer"
+            download="Chantae_Sierra_ZCard_A.pdf"
+            className="label-ed inline-flex items-center justify-center rounded-full border border-[#1C1E1B] px-8 py-4 text-[#1C1E1B] hover:bg-[#1C1E1B] hover:text-[#F9F6F0] transition-colors duration-300"
+            data-testid="download-zcard-button"
+          >
+            Download Zcard
+          </a>
+        </div>
+      </Reveal>
     </div>
   </section>
 );

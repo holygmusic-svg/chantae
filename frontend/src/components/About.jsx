@@ -19,17 +19,17 @@ export const About = () => (
         </Reveal>
         <Reveal delay={0.1}>
           <h2 className="font-serif-ed font-light text-4xl md:text-6xl lg:text-7xl leading-[1.05] tracking-tight mt-8">
-            An organic <strong><em className="italic text-[#A9967A]">muse</em></strong>,
+            An organic <strong className="font-bold"><em className="italic text-[#A9967A]">muse</em></strong>,
             <br />
-            timelessly <strong><em className="italic">framed</em></strong>...
+            timelessly <strong className="font-bold"><em className="italic">framed</em></strong>...
           </h2>
         </Reveal>
         <Reveal delay={0.2} className="mt-10 max-w-xl">
           <p className="text-base md:text-lg font-light leading-relaxed text-[#5C5F5A]">
-            <strong className="font-bold">CHANTAE SIERRA</strong> possesses a <strong><em className="italic">rare, luminous presence</em></strong>--the kind of <strong><em className="italic">quiet elegance</em></strong> that commands attention the moment that she enters a space. Flowing with an <strong><em className="italic">effortless grace</em></strong>, she carries a <strong><em className="italic">radiant warmth</em></strong> and a <strong><em className="italic">brilliant unforgettable smile</em></strong> that instantly elevates the energy of any room. A true embodiment of <strong><em className="italic">celestial beauty and modern sophistication</em></strong>, her captivating energy brings an <strong><em className="italic">undeniable, glowing vitality</em></strong> to every frame.
+            <strong className="font-bold">CHANTAE SIERRA</strong> possesses a <strong className="font-bold"><em className="italic">rare, luminous presence</em></strong>--the kind of <strong className="font-bold"><em className="italic">quiet elegance</em></strong> that commands attention the moment that she enters a space. Flowing with an <strong className="font-bold"><em className="italic">effortless grace</em></strong>, she carries a <strong className="font-bold"><em className="italic">radiant warmth</em></strong> and a <strong className="font-bold"><em className="italic">brilliant unforgettable smile</em></strong> that instantly elevates the energy of any room. A true embodiment of <strong className="font-bold"><em className="italic">celestial beauty and modern sophistication</em></strong>, her captivating energy brings an <strong className="font-bold"><em className="italic">undeniable, glowing vitality</em></strong> to every frame.
           </p>
           <p className="text-base md:text-lg font-light leading-relaxed text-[#5C5F5A] mt-6">
-            Represented across Paris, Milan, New York, and Miami, she collaborates with photographers, producers, stylists and maisons who believe an image or work of art should only be <strong><em className="italic">Timeless</em></strong>.
+            Represented across Paris, Milan, New York, and Miami, she collaborates with photographers, producers, stylists and maisons who believe an image or work of art should only be <strong className="font-bold"><em className="italic">Timeless</em></strong>.
           </p>
         </Reveal>
       </div>

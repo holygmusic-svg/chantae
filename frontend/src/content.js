@@ -21,7 +21,7 @@ export const CONTENT = {
   },
 
   heroIntro:
-    "Beauty & fashion model. A natural muse drifting between editorial stillness, production, and runway motion — available for select campaigns worldwide.",
+    "Beauty, fashion model, & actor. A natural muse drifting between editorial stillness, production, and runway motion — available for select campaigns worldwide.",
 
   about: {
     paragraphs: [

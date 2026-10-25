@@ -19,20 +19,18 @@ export const About = () => (
         </Reveal>
         <Reveal delay={0.1}>
           <h2 className="font-serif-ed font-light text-4xl md:text-6xl lg:text-7xl leading-[1.05] tracking-tight mt-8">
-            A muse grown <em className="italic text-[#A9967A]">wild</em>,
+            An organic <em className="italic text-[#A9967A]">muse</em>,
             <br />
-            framed in <em className="italic">stillness</em>.
+            timelessly <em className="italic">framed</em>...
           </h2>
         </Reveal>
         <Reveal delay={0.2} className="mt-10 max-w-xl">
-          {CONTENT.about.paragraphs.map((p, i) => (
-            <p
-              key={i}
-              className={`text-base md:text-lg font-light leading-relaxed text-[#5C5F5A] ${i > 0 ? "mt-6" : ""}`}
-            >
-              {p}
-            </p>
-          ))}
+          <p className="text-base md:text-lg font-light leading-relaxed text-[#5C5F5A]">
+            Chantae Sierra possesses a <em className="italic">rare, luminous presence</em>--the kind of <em className="italic">quiet elegance</em> that commands attention the moment that she enters a space. Flowing with an <em className="italic">effortless grace</em>, she carries a <em className="italic">radiant warmth</em> and a <em className="italic">brilliant unforgettable smile</em> that instantly elevates the energy of any room. A true embodiment of <em className="italic">celestial beauty and modern sophistication</em>, her captivating energy brings an <em className="italic">undeniable, glowing vitality</em> to every frame.
+          </p>
+          <p className="text-base md:text-lg font-light leading-relaxed text-[#5C5F5A] mt-6">
+            Represented across Paris, Milan, New York, and Miami, she collaborates with photographers, producers, stylists and maisons who believe an image or work of art should only be <strong><em className="italic">Timeless</em></strong>.
+          </p>
         </Reveal>
       </div>
 

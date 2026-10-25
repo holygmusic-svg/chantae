@@ -36,6 +36,8 @@ export const Contact = () => {
     setFeedback(null);
 
     const payload = new FormData(e.currentTarget);
+    // Never send the optional Formspree honeypot; browser autofill can cause false positives.
+    payload.delete("_gotcha");
     payload.set("_subject", `Chantae Sierra — ${form.inquiry_type} enquiry from ${form.name}`);
 
     try {
@@ -127,14 +129,6 @@ export const Contact = () => {
               data-testid="contact-form"
               className="w-full max-w-[600px] space-y-3"
             >
-              <input
-                type="text"
-                name="_gotcha"
-                aria-hidden="true"
-                tabIndex={-1}
-                autoComplete="off"
-                className="absolute -left-[9999px] w-px h-px overflow-hidden"
-              />
               <div>
                 <label htmlFor="contact-name" className="label-ed text-[#5C5F5A]">
                   Name

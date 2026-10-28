@@ -66,7 +66,7 @@ export const Resume = () => (
       </Reveal>
 
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-14 lg:gap-20">
-        <Reveal delay={0.1} className="h-full">
+        <Reveal delay={0.2} className="h-full lg:order-2">
           <div className="border-t border-[#A9967A]/50 pt-6 h-full flex flex-col">
             <h3 className="label-ed text-[#1C1E1B] mb-8">Experience</h3>
             <ul className="space-y-3 text-sm md:text-base leading-relaxed font-light text-[#5C5F5A]">
@@ -87,7 +87,7 @@ export const Resume = () => (
           </div>
         </Reveal>
 
-        <Reveal delay={0.2} className="h-full">
+        <Reveal delay={0.1} className="h-full lg:order-1">
           <div className="border-t border-[#A9967A]/50 pt-6">
             <h3 className="label-ed text-[#1C1E1B] mb-8">Training</h3>
             <div className="space-y-10">

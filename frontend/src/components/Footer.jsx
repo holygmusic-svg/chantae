@@ -26,18 +26,18 @@ export const Footer = () => (
           target="_blank"
           rel="noopener noreferrer"
           data-testid="footer-instagram-link"
-          className="flex items-center gap-2 label-ed text-[#5C5F5A] hover:text-[#1C1E1B] transition-colors duration-300"
+          className="flex items-center gap-2 label-ed !font-semibold !tracking-[0.18em] text-[#1C1E1B] hover:text-[#8F795B] transition-colors duration-300"
         >
-          <Instagram className="w-4 h-4" /> Instagram
+          <Instagram className="w-5 h-5" strokeWidth={2.6} aria-hidden="true" /> Instagram
         </a>
         <a
           href={CONTENT.socials.tiktok}
           target="_blank"
           rel="noopener noreferrer"
           data-testid="footer-tiktok-link"
-          className="flex items-center gap-2 label-ed text-[#5C5F5A] hover:text-[#1C1E1B] transition-colors duration-300"
+          className="flex items-center gap-2 label-ed !font-semibold !tracking-[0.18em] text-[#1C1E1B] hover:text-[#8F795B] transition-colors duration-300"
         >
-          <Music2 className="w-4 h-4" /> TikTok
+          <Music2 className="w-5 h-5" strokeWidth={2.6} aria-hidden="true" /> TikTok
         </a>
       </div>
       <span className="label-ed text-[#5C5F5A]">

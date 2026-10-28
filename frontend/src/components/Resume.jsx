@@ -2,7 +2,7 @@ import { Reveal } from "./Reveal";
 import { FloraMark } from "./Logo";
 
 const experience = [
-  "LUXE Brand International Miami Spring Preview Show at The LAB Miami (Wynwood)",
+  "LUXE Brand International Miami Swimwear Week Spring Preview Show at The LAB Miami (Wynwood)",
   "Melanin Day Art Basel Week Showcase at Arthood56 Gallery",
   "Art of Healing Community Center Fundraiser at Mosaic Miami",
   "Small Business Fashion Week Show Atlanta",
@@ -74,7 +74,7 @@ export const Resume = () => (
                 <Bullet key={entry}>{entry}</Bullet>
               ))}
             </ul>
-            <div className="mt-auto pt-8">
+            <div className="mt-8">
               <div className="border-t border-[#A9967A]/40 pt-6">
                 <h3 className="label-ed text-[#1C1E1B] mb-5">Promotions</h3>
                 <ul className="grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-3 text-sm md:text-base leading-relaxed font-light text-[#5C5F5A]">
